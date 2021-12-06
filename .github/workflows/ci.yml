@@ -1,0 +1,39 @@
+name : Continuous Integration Check
+
+on :
+  push :
+    branches : [ main ]
+  pull_request :
+    branches : [ main ]
+
+jobs :
+  build :
+
+    runs-on : ubuntu-latest
+
+    steps :
+      - uses : actions/checkout@v2
+      - name : Set up JDK 11
+        uses : actions/setup-java@v2
+        with :
+          java-version : '11'
+          distribution : 'adopt'
+          cache : maven
+      - name : Build parent-pom-base
+        run : mvn -B clean package --file parent-pom-base/pom.xml
+      - name : Publish parent-pom-base
+        run : mvn deploy --file parent-pom-base/pom.xml -s $GITHUB_WORKSPACE/parent-pom-base/settings.xml -Ddeployer.gh.username=${{secrets.DEPLOYER_GH_USERNAME}} -Ddeployer.gh.password=${{secrets.DEPLOYER_GH_PASSWORD}}
+        env :
+          GITHUB_TOKEN : ${{ github.token }}
+      - name : Build parent-pom-rest
+        run : mvn -B clean package --file parent-pom-rest/pom.xml
+      - name : Publish parent-pom-rest
+        run : mvn deploy --file parent-pom-rest/pom.xml -s $GITHUB_WORKSPACE/parent-pom-rest/settings.xml -Ddeployer.gh.username=${{secrets.DEPLOYER_GH_USERNAME}} -Ddeployer.gh.password=${{secrets.DEPLOYER_GH_PASSWORD}}
+        env :
+          GITHUB_TOKEN : ${{ github.token }}
+      - name : Build parent-pom-async
+        run : mvn -B clean package --file parent-pom-async/pom.xml
+      - name : Publish parent-pom-async
+        run : mvn deploy --file parent-pom-async/pom.xml -s $GITHUB_WORKSPACE/parent-pom-async/settings.xml -Ddeployer.gh.username=${{secrets.DEPLOYER_GH_USERNAME}} -Ddeployer.gh.password=${{secrets.DEPLOYER_GH_PASSWORD}}
+        env :
+          GITHUB_TOKEN : ${{ github.token }}

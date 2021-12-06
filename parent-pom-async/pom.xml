@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.ujar.bom</groupId>
+    <artifactId>parent-pom-async</artifactId>
+    <version>0.0.7-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>Asynchronous service parent POM</name>
+    <description>Parent POM which allows to work with a message broker.</description>
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <properties>
+        <java.version>11</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <spring-cloud-dependencies.version>2020.0.4</spring-cloud-dependencies.version>
+        <logbook-spring-boot-starter.version>2.14.0</logbook-spring-boot-starter.version>
+        <sonar.exclusions>**/*Application.java</sonar.exclusions>
+        <testcontainers.version>1.16.2</testcontainers.version>
+        <spring-kafka.version>2.8.0</spring-kafka.version>
+        <kafka.avro.serde.version>6.2.1</kafka.avro.serde.version>
+        <org.awaitility.version>4.1.0</org.awaitility.version>
+    </properties>
+
+    <parent>
+        <groupId>org.ujar.bom</groupId>
+        <artifactId>parent-pom-base</artifactId>
+        <version>0.0.7-SNAPSHOT</version>
+        <relativePath/>
+    </parent>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud-dependencies.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.zalando</groupId>
+                <artifactId>logbook-spring-boot-starter</artifactId>
+                <version>${logbook-spring-boot-starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.kafka</groupId>
+                <artifactId>spring-kafka</artifactId>
+                <version>${spring-kafka.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.confluent</groupId>
+                <artifactId>kafka-streams-avro-serde</artifactId>
+                <version>${kafka.avro.serde.version}</version>
+            </dependency>
+            <!--Test dependencies-->
+            <dependency>
+                <groupId>org.testcontainers</groupId>
+                <artifactId>kafka</artifactId>
+                <version>${testcontainers.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.kafka</groupId>
+                <artifactId>spring-kafka-test</artifactId>
+                <version>${spring-kafka.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.awaitility</groupId>
+                <artifactId>awaitility</artifactId>
+                <version>${org.awaitility.version}</version>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <distributionManagement>
+        <repository>
+            <id>ujar-github-packages</id>
+            <name>uJar Maven Releases</name>
+            <url>https://maven.pkg.github.com/ujar-org/maven-packages</url>
+        </repository>
+        <snapshotRepository>
+            <id>ujar-github-packages</id>
+            <name>uJar Maven Snapshots</name>
+            <url>https://maven.pkg.github.com/ujar-org/maven-packages</url>
+        </snapshotRepository>
+    </distributionManagement>
+    <repositories>
+        <repository>
+            <id>ujar-github-packages</id>
+            <url>https://maven.pkg.github.com/ujar-org/maven-packages</url>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>confluent</id>
+            <url>https://packages.confluent.io/maven/</url>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <name>uJar Maven Packages</name>
+            <id>ujar-github-packages</id>
+            <url>https://maven.pkg.github.com/ujar-org/maven-packages</url>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+
+</project>
