@@ -3,6 +3,8 @@ stack in a suitable way.
 
 The latest released version requires JDK 11 at build time.
 
+[![Build Status](https://drone.ujar.org/api/badges/ujar-org/bom/status.svg)](https://drone.ujar.org/ujar-org/bom)
+
 # Spring-based parent POM.
 
 To use it as your parent POM using the following snippet:
