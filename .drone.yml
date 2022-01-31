@@ -18,7 +18,7 @@ steps:
       branch:
         include:
           - feature/*
-          - main
+          - master
           - develop
       event:
         include:
@@ -38,7 +38,7 @@ steps:
       branch:
         include:
           - feature/*
-          - main
+          - master
           - develop
       event:
         include:
@@ -58,7 +58,7 @@ steps:
       branch:
         include:
           - feature/*
-          - main
+          - master
           - develop
       event:
         include:
@@ -91,7 +91,7 @@ steps:
       branch:
         include:
           - feature/*
-          - main
+          - master
           - develop
       event:
         include:
@@ -111,7 +111,7 @@ steps:
       branch:
         include:
           - feature/*
-          - main
+          - master
           - develop
       event:
         include:
@@ -131,7 +131,7 @@ steps:
       branch:
         include:
           - feature/*
-          - main
+          - master
           - develop
       event:
         include:
@@ -164,7 +164,7 @@ steps:
       branch:
         include:
           - feature/*
-          - main
+          - master
           - develop
       event:
         include:
@@ -184,7 +184,7 @@ steps:
       branch:
         include:
           - feature/*
-          - main
+          - master
           - develop
       event:
         include:
@@ -204,7 +204,7 @@ steps:
       branch:
         include:
           - feature/*
-          - main
+          - master
           - develop
       event:
         include:
