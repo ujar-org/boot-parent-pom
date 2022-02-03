@@ -19,7 +19,6 @@ steps:
         include:
           - feature/*
           - master
-          - develop
       event:
         include:
           - push
@@ -39,7 +38,7 @@ steps:
         include:
           - feature/*
           - master
-          - develop
+
       event:
         include:
           - push
@@ -59,7 +58,7 @@ steps:
         include:
           - feature/*
           - master
-          - develop
+
       event:
         include:
           - push
@@ -92,7 +91,6 @@ steps:
         include:
           - feature/*
           - master
-          - develop
       event:
         include:
           - push
@@ -112,7 +110,6 @@ steps:
         include:
           - feature/*
           - master
-          - develop
       event:
         include:
           - push
@@ -132,7 +129,6 @@ steps:
         include:
           - feature/*
           - master
-          - develop
       event:
         include:
           - push
@@ -165,7 +161,6 @@ steps:
         include:
           - feature/*
           - master
-          - develop
       event:
         include:
           - push
@@ -185,7 +180,6 @@ steps:
         include:
           - feature/*
           - master
-          - develop
       event:
         include:
           - push
@@ -199,13 +193,12 @@ steps:
       DEPLOYER_PASSWORD :
         from_secret : DEPLOYER_PASSWORD
     commands:
-      - mvn deploy -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD  -s parent-pom-async/settings.xml  --file parent-pom-async/pom.xml
+      - mvn deploy -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD -s parent-pom-async/settings.xml  --file parent-pom-async/pom.xml
     when:
       branch:
         include:
           - feature/*
           - master
-          - develop
       event:
         include:
           - push
@@ -219,6 +212,6 @@ steps:
       DEPLOYER_PASSWORD :
         from_secret : DEPLOYER_PASSWORD
     commands:
-      - mvn deploy -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD  -s parent-pom-async/settings.xml  --file parent-pom-async/pom.xml
+      - mvn deploy -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD -s parent-pom-async/settings.xml  --file parent-pom-async/pom.xml
     when:
       event: tag
