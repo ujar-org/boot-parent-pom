@@ -18,6 +18,11 @@
         </license>
     </licenses>
 
+    <scm>
+        <connection>scm:git:https://github.com/ujar-org/mercury--bom.git</connection>
+        <tag>HEAD</tag>
+    </scm>
+
     <properties>
         <java.version>11</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

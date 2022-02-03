@@ -3,7 +3,7 @@ stack in a suitable way.
 
 The latest released version requires JDK 11 at build time.
 
-[![Build Status](https://drone.ujar.org/api/badges/ujar-org/bom/status.svg)](https://drone.ujar.org/ujar-org/bom)
+[![Build Status](https://drone.ujar.org/api/badges/ujar-org/mercury--bom/status.svg)](https://drone.ujar.org/ujar-org/mercury--bom)
 
 # Spring-based parent POM.
 
