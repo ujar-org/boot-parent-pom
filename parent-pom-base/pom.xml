@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.ujar.bom</groupId>
+    <groupId>org.ujar.mercury.bom</groupId>
     <artifactId>parent-pom-base</artifactId>
     <version>0.0.7-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -201,7 +201,7 @@
                             <version>${puppycrawl.checkstyle.version}</version>
                         </dependency>
                         <dependency>
-                            <groupId>org.ujar.codequality</groupId>
+                            <groupId>org.ujar.mercury.codequality</groupId>
                             <artifactId>code-quality-checkstyle</artifactId>
                             <version>${ujar.code-quality-checkstyle.version}</version>
                         </dependency>
