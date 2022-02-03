@@ -33,7 +33,7 @@
         <archunit.version>0.22.0</archunit.version>
         <spring-boot.version>2.5.7</spring-boot.version>
         <javax-servlet-api.version>4.0.1</javax-servlet-api.version>
-        <postgresql.version>42.3.1</postgresql.version>
+        <postgresql.version>42.3.2</postgresql.version>
         <google.findbugs.version>3.0.1</google.findbugs.version>
         <spotbugs-annotations.version>4.5.0</spotbugs-annotations.version>
         <gaul.modernizer-maven-plugin.version>2.3.0</gaul.modernizer-maven-plugin.version>
