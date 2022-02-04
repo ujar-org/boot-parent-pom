@@ -38,44 +38,12 @@ steps:
         include:
           - feature/*
           - master
-
       event:
         include:
           - push
           - pull_request
-
-  - name: publish-snapshot-package parent-pom-base
-    image: maven:3-jdk-11
-    environment :
-      DEPLOYER_USERNAME :
-        from_secret : DEPLOYER_USERNAME
-      DEPLOYER_PASSWORD :
-        from_secret : DEPLOYER_PASSWORD
-    commands:
-      - mvn deploy -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD  -s parent-pom-base/settings.xml  --file parent-pom-base/pom.xml
-    when:
-      branch:
-        include:
-          - feature/*
-          - master
-
-      event:
-        include:
-          - push
-          - pull_request
-
-  - name: publish-release-package parent-pom-base
-    image: maven:3-jdk-11
-    environment :
-      DEPLOYER_USERNAME :
-        from_secret : DEPLOYER_USERNAME
-      DEPLOYER_PASSWORD :
-        from_secret : DEPLOYER_PASSWORD
-    commands:
-      - mvn deploy -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD  -s parent-pom-base/settings.xml  --file parent-pom-base/pom.xml
-    when:
-      event: tag
-
+    depends_on :
+      - unit-test parent-pom-base
 
   - name: unit-test parent-pom-rest
     image: maven:3-jdk-11
@@ -114,38 +82,8 @@ steps:
         include:
           - push
           - pull_request
-
-  - name: publish-snapshot-package parent-pom-rest
-    image: maven:3-jdk-11
-    environment :
-      DEPLOYER_USERNAME :
-        from_secret : DEPLOYER_USERNAME
-      DEPLOYER_PASSWORD :
-        from_secret : DEPLOYER_PASSWORD
-    commands:
-      - mvn deploy -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD  -s parent-pom-rest/settings.xml  --file parent-pom-rest/pom.xml
-    when:
-      branch:
-        include:
-          - feature/*
-          - master
-      event:
-        include:
-          - push
-          - pull_request
-
-  - name: publish-release-package parent-pom-rest
-    image: maven:3-jdk-11
-    environment :
-      DEPLOYER_USERNAME :
-        from_secret : DEPLOYER_USERNAME
-      DEPLOYER_PASSWORD :
-        from_secret : DEPLOYER_PASSWORD
-    commands:
-      - mvn deploy -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD  -s parent-pom-rest/settings.xml  --file parent-pom-rest/pom.xml
-    when:
-      event: tag
-
+    depends_on :
+      - unit-test parent-pom-rest
 
   - name: unit-test parent-pom-async
     image: maven:3-jdk-11
@@ -184,6 +122,51 @@ steps:
         include:
           - push
           - pull_request
+    depends_on :
+      - unit-test parent-pom-async
+
+  - name: publish-snapshot-package parent-pom-base
+    image: maven:3-jdk-11
+    environment :
+      DEPLOYER_USERNAME :
+        from_secret : DEPLOYER_USERNAME
+      DEPLOYER_PASSWORD :
+        from_secret : DEPLOYER_PASSWORD
+    commands:
+      - mvn deploy -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD  -s parent-pom-base/settings.xml  --file parent-pom-base/pom.xml
+    when:
+      branch:
+        include:
+          - feature/*
+          - master
+      event:
+        include:
+          - push
+          - pull_request
+      depends_on :
+        - build-test parent-pom-base
+
+  - name: publish-snapshot-package parent-pom-rest
+    image: maven:3-jdk-11
+    environment :
+      DEPLOYER_USERNAME :
+        from_secret : DEPLOYER_USERNAME
+      DEPLOYER_PASSWORD :
+        from_secret : DEPLOYER_PASSWORD
+    commands:
+      - mvn deploy -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD  -s parent-pom-rest/settings.xml  --file parent-pom-rest/pom.xml
+    when:
+      branch:
+        include:
+          - feature/*
+          - master
+      event:
+        include:
+          - push
+          - pull_request
+      depends_on :
+        - build-test parent-pom-rest
+        - publish-snapshot-package parent-pom-base
 
   - name: publish-snapshot-package parent-pom-async
     image: maven:3-jdk-11
@@ -203,6 +186,38 @@ steps:
         include:
           - push
           - pull_request
+      depends_on :
+        - build-test parent-pom-async
+        - publish-snapshot-package parent-pom-base
+
+  - name: publish-release-package parent-pom-base
+    image: maven:3-jdk-11
+    environment :
+      DEPLOYER_USERNAME :
+        from_secret : DEPLOYER_USERNAME
+      DEPLOYER_PASSWORD :
+        from_secret : DEPLOYER_PASSWORD
+    commands:
+      - mvn deploy -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD  -s parent-pom-base/settings.xml  --file parent-pom-base/pom.xml
+    when:
+      event: tag
+      depends_on :
+        - build-test parent-pom-base
+
+  - name: publish-release-package parent-pom-rest
+    image: maven:3-jdk-11
+    environment :
+      DEPLOYER_USERNAME :
+        from_secret : DEPLOYER_USERNAME
+      DEPLOYER_PASSWORD :
+        from_secret : DEPLOYER_PASSWORD
+    commands:
+      - mvn deploy -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD  -s parent-pom-rest/settings.xml  --file parent-pom-rest/pom.xml
+    when:
+      event: tag
+      depends_on :
+        - build-test parent-pom-rest
+        - publish-release-package parent-pom-base
 
   - name: publish-release-package parent-pom-async
     image: maven:3-jdk-11
@@ -215,3 +230,6 @@ steps:
       - mvn deploy -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD -s parent-pom-async/settings.xml  --file parent-pom-async/pom.xml
     when:
       event: tag
+      depends_on :
+        - build-test parent-pom-async
+        - publish-release-package parent-pom-base
