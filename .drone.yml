@@ -32,7 +32,7 @@ steps:
       DEPLOYER_PASSWORD :
         from_secret : DEPLOYER_PASSWORD
     commands:
-      - mvn clean package --file parent-pom-base/pom.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD  -s parent-pom-base/settings.xml
+      - mvn clean package -DskipTests=true -Dcheckstyle.skip=true --file parent-pom-base/pom.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD  -s parent-pom-base/settings.xml
     when:
       branch:
         include:
@@ -72,7 +72,7 @@ steps:
       DEPLOYER_PASSWORD :
         from_secret : DEPLOYER_PASSWORD
     commands:
-      - mvn clean package --file parent-pom-rest/pom.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD  -s parent-pom-rest/settings.xml
+      - mvn clean package -DskipTests=true -Dcheckstyle.skip=true --file parent-pom-rest/pom.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD  -s parent-pom-rest/settings.xml
     when:
       branch:
         include:
@@ -112,7 +112,7 @@ steps:
       DEPLOYER_PASSWORD :
         from_secret : DEPLOYER_PASSWORD
     commands:
-      - mvn clean package --file parent-pom-async/pom.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD  -s parent-pom-async/settings.xml
+      - mvn clean package -DskipTests=true -Dcheckstyle.skip=true --file parent-pom-async/pom.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD  -s parent-pom-async/settings.xml
     when:
       branch:
         include:
@@ -133,7 +133,7 @@ steps:
       DEPLOYER_PASSWORD :
         from_secret : DEPLOYER_PASSWORD
     commands:
-      - mvn deploy -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD  -s parent-pom-base/settings.xml  --file parent-pom-base/pom.xml
+      - mvn deploy -DskipTests=true -Dcheckstyle.skip=true -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD  -s parent-pom-base/settings.xml  --file parent-pom-base/pom.xml
     when:
       branch:
         include:
@@ -154,7 +154,7 @@ steps:
       DEPLOYER_PASSWORD :
         from_secret : DEPLOYER_PASSWORD
     commands:
-      - mvn deploy -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD  -s parent-pom-rest/settings.xml  --file parent-pom-rest/pom.xml
+      - mvn deploy -DskipTests=true -Dcheckstyle.skip=true -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD  -s parent-pom-rest/settings.xml  --file parent-pom-rest/pom.xml
     when:
       branch:
         include:
@@ -176,7 +176,7 @@ steps:
       DEPLOYER_PASSWORD :
         from_secret : DEPLOYER_PASSWORD
     commands:
-      - mvn deploy -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD -s parent-pom-async/settings.xml  --file parent-pom-async/pom.xml
+      - mvn deploy -DskipTests=true -Dcheckstyle.skip=true -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD -s parent-pom-async/settings.xml  --file parent-pom-async/pom.xml
     when:
       branch:
         include:
@@ -198,7 +198,7 @@ steps:
       DEPLOYER_PASSWORD :
         from_secret : DEPLOYER_PASSWORD
     commands:
-      - mvn deploy -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD  -s parent-pom-base/settings.xml  --file parent-pom-base/pom.xml
+      - mvn deploy -DskipTests=true -Dcheckstyle.skip=true -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD  -s parent-pom-base/settings.xml  --file parent-pom-base/pom.xml
     when:
       event: tag
       depends_on :
@@ -212,7 +212,7 @@ steps:
       DEPLOYER_PASSWORD :
         from_secret : DEPLOYER_PASSWORD
     commands:
-      - mvn deploy -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD  -s parent-pom-rest/settings.xml  --file parent-pom-rest/pom.xml
+      - mvn deploy -DskipTests=true -Dcheckstyle.skip=true -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD  -s parent-pom-rest/settings.xml  --file parent-pom-rest/pom.xml
     when:
       event: tag
       depends_on :
@@ -227,7 +227,7 @@ steps:
       DEPLOYER_PASSWORD :
         from_secret : DEPLOYER_PASSWORD
     commands:
-      - mvn deploy -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD -s parent-pom-async/settings.xml  --file parent-pom-async/pom.xml
+      - mvn deploy -DskipTests=true -Dcheckstyle.skip=true -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD -s parent-pom-async/settings.xml  --file parent-pom-async/pom.xml
     when:
       event: tag
       depends_on :
