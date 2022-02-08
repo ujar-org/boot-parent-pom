@@ -42,8 +42,6 @@ steps:
         include:
           - push
           - pull_request
-    depends_on :
-      - unit-test parent-pom-base
 
   - name: unit-test parent-pom-rest
     image: maven:3-jdk-11
@@ -82,8 +80,6 @@ steps:
         include:
           - push
           - pull_request
-    depends_on :
-      - unit-test parent-pom-rest
 
   - name: unit-test parent-pom-async
     image: maven:3-jdk-11
@@ -122,8 +118,6 @@ steps:
         include:
           - push
           - pull_request
-    depends_on :
-      - unit-test parent-pom-async
 
   - name: publish-snapshot-package parent-pom-base
     image: maven:3-jdk-11
