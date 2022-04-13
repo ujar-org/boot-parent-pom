@@ -3,7 +3,7 @@ stack in a suitable way.
 
 The latest released version requires JDK 11 at build time.
 
-[![Build Status](https://drone.ujar.org/api/badges/ujar-org/mercury--bom/status.svg)](https://drone.ujar.org/ujar-org/mercury--bom)
+[![Build Status](https://drone.ujar.org/api/badges/ujar-org/webstore-bom/status.svg)](https://drone.ujar.org/ujar-org/webstore-bom)
 
 # Spring-based parent POM.
 
@@ -11,7 +11,7 @@ To use it as your parent POM using the following snippet:
 
 ```xml
   <parent>
-    <groupId>org.ujar.mercury.bom</groupId>
+    <groupId>org.ujar.webstore.bom</groupId>
     <artifactId>parent-pom-base</artifactId>
     <version>0.0.7-SNAPSHOT</version>
   </parent>
@@ -21,7 +21,7 @@ To use it as your parent POM using the following snippet:
 
 ```xml
   <parent>
-    <groupId>org.ujar.mercury.bom</groupId>
+    <groupId>org.ujar.webstore.bom</groupId>
     <artifactId>parent-pom-rest</artifactId>
     <version>0.0.7-SNAPSHOT</version>
   </parent>
@@ -31,7 +31,7 @@ To use it as your parent POM using the following snippet:
 
 ```xml
   <parent>
-    <groupId>org.ujar.mercury.bom</groupId>
+    <groupId>org.ujar.webstore.bom</groupId>
     <artifactId>parent-pom-async</artifactId>
     <version>0.0.7-SNAPSHOT</version>
   </parent>

@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.ujar.mercury.bom</groupId>
+    <groupId>org.ujar.webstore.bom</groupId>
     <artifactId>parent-pom-rest</artifactId>
     <version>0.0.7-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -19,7 +19,7 @@
     </licenses>
 
     <scm>
-        <connection>scm:git:https://github.com/ujar-org/mercury--bom.git</connection>
+        <connection>scm:git:https://github.com/ujar-org/webstore-bom.git</connection>
         <tag>HEAD</tag>
     </scm>
 
@@ -36,7 +36,7 @@
     </properties>
 
     <parent>
-        <groupId>org.ujar.mercury.bom</groupId>
+        <groupId>org.ujar.webstore.bom</groupId>
         <artifactId>parent-pom-base</artifactId>
         <version>0.0.7-SNAPSHOT</version>
         <relativePath/>

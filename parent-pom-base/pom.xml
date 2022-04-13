@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.ujar.mercury.bom</groupId>
+    <groupId>org.ujar.webstore.bom</groupId>
     <artifactId>parent-pom-base</artifactId>
     <version>0.0.7-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -19,7 +19,7 @@
     </licenses>
 
     <scm>
-        <connection>scm:git:https://github.com/ujar-org/mercury--bom.git</connection>
+        <connection>scm:git:https://github.com/ujar-org/webstore-bom.git</connection>
         <tag>HEAD</tag>
     </scm>
 
@@ -45,7 +45,7 @@
         <codehaus.versions-maven-plugin.version>2.8.1</codehaus.versions-maven-plugin.version>
         <apache.maven-resources-plugin.version>3.2.0</apache.maven-resources-plugin.version>
         <apache.maven-checkstyle-plugin.version>3.1.2</apache.maven-checkstyle-plugin.version>
-        <puppycrawl.checkstyle.version>9.1</puppycrawl.checkstyle.version>
+        <puppycrawl.checkstyle.version>10.1</puppycrawl.checkstyle.version>
         <ujar.code-quality-checkstyle.version>0.0.7-SNAPSHOT</ujar.code-quality-checkstyle.version>
     </properties>
 
@@ -206,7 +206,7 @@
                             <version>${puppycrawl.checkstyle.version}</version>
                         </dependency>
                         <dependency>
-                            <groupId>org.ujar.mercury.codequality</groupId>
+                            <groupId>org.ujar.webstore.codequality</groupId>
                             <artifactId>code-quality-checkstyle</artifactId>
                             <version>${ujar.code-quality-checkstyle.version}</version>
                         </dependency>
