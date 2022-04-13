@@ -9,7 +9,7 @@ To use it as your parent POM using the following snippet:
 
 ```xml
   <parent>
-    <groupId>org.ujar.webstore.bom</groupId>
+    <groupId>org.ujar.bom</groupId>
     <artifactId>parent-pom-base</artifactId>
     <version>0.0.7-SNAPSHOT</version>
   </parent>
