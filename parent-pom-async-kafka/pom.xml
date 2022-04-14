@@ -4,12 +4,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.ujar.bom</groupId>
-    <artifactId>parent-pom-async</artifactId>
+    <artifactId>parent-pom-async-kafka</artifactId>
     <version>0.0.7-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>Asynchronous service parent POM</name>
-    <description>Parent POM which allows to work with a message broker.</description>
+    <name>Async service parent POM for Apache Kafka</name>
+    <description>Parent POM which allows to work with a Kafka message broker.</description>
     <licenses>
         <license>
             <name>The Apache Software License, Version 2.0</name>
@@ -33,7 +33,7 @@
         <logbook-spring-boot-starter.version>2.14.0</logbook-spring-boot-starter.version>
         <sonar.exclusions>**/*Application.java</sonar.exclusions>
         <testcontainers.version>1.16.2</testcontainers.version>
-        <spring-kafka.version>2.8.0</spring-kafka.version>
+        <spring-kafka.version>2.8.4</spring-kafka.version>
         <kafka.avro.serde.version>6.2.1</kafka.avro.serde.version>
         <org.awaitility.version>4.1.0</org.awaitility.version>
     </properties>

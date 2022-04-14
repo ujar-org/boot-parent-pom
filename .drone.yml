@@ -144,7 +144,7 @@ steps:
       event: tag
 
 
-  - name: unit-test parent-pom-async
+  - name: unit-test parent-pom-async-kafka
     image: maven:3-jdk-11
     environment :
       DEPLOYER_USERNAME :
@@ -152,7 +152,7 @@ steps:
       DEPLOYER_PASSWORD :
         from_secret : DEPLOYER_PASSWORD
     commands:
-      - mvn test --file parent-pom-async/pom.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD  -s parent-pom-async/settings.xml
+      - mvn test --file parent-pom-async-kafka/pom.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD  -s parent-pom-async-kafka/settings.xml
     when:
       branch:
         include:
@@ -163,7 +163,7 @@ steps:
           - push
           - pull_request
 
-  - name: build-test parent-pom-async
+  - name: build-test parent-pom-async-kafka
     image: maven:3-jdk-11
     environment :
       DEPLOYER_USERNAME :
@@ -171,7 +171,7 @@ steps:
       DEPLOYER_PASSWORD :
         from_secret : DEPLOYER_PASSWORD
     commands:
-      - mvn clean package -DskipTests=true -Dcheckstyle.skip=true --file parent-pom-async/pom.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD  -s parent-pom-async/settings.xml
+      - mvn clean package -DskipTests=true -Dcheckstyle.skip=true --file parent-pom-async-kafka/pom.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD  -s parent-pom-async-kafka/settings.xml
     when:
       branch:
         include:
@@ -182,7 +182,7 @@ steps:
           - push
           - pull_request
 
-  - name: publish-snapshot-package parent-pom-async
+  - name: publish-snapshot-package parent-pom-async-kafka
     image: maven:3-jdk-11
     environment :
       DEPLOYER_USERNAME :
@@ -190,7 +190,7 @@ steps:
       DEPLOYER_PASSWORD :
         from_secret : DEPLOYER_PASSWORD
     commands:
-      - mvn deploy -DskipTests=true -Dcheckstyle.skip=true -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD -s parent-pom-async/settings.xml  --file parent-pom-async/pom.xml
+      - mvn deploy -DskipTests=true -Dcheckstyle.skip=true -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD -s parent-pom-async-kafka/settings.xml  --file parent-pom-async-kafka/pom.xml
     when:
       branch:
         include:
@@ -201,7 +201,7 @@ steps:
           - push
           - pull_request
 
-  - name: publish-release-package parent-pom-async
+  - name: publish-release-package parent-pom-async-kafka
     image: maven:3-jdk-11
     environment :
       DEPLOYER_USERNAME :
@@ -209,6 +209,6 @@ steps:
       DEPLOYER_PASSWORD :
         from_secret : DEPLOYER_PASSWORD
     commands:
-      - mvn deploy -DskipTests=true -Dcheckstyle.skip=true -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD -s parent-pom-async/settings.xml  --file parent-pom-async/pom.xml
+      - mvn deploy -DskipTests=true -Dcheckstyle.skip=true -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD -s parent-pom-async-kafka/settings.xml  --file parent-pom-async-kafka/pom.xml
     when:
       event: tag
