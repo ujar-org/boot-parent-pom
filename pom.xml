@@ -41,7 +41,7 @@
 
         <ujar.version>23.0.0-SNAPSHOT</ujar.version>
 
-        <spring-boot.version>3.0.5</spring-boot.version>
+        <spring-boot.version>3.0.6</spring-boot.version>
         <spring-cloud-dependencies.version>2022.0.2</spring-cloud-dependencies.version>
         <opentelemetry.version>1.24.0</opentelemetry.version>
         <spring-test.version>6.0.4</spring-test.version>
