@@ -41,7 +41,7 @@
 
         <ujar.version>23.0.0-SNAPSHOT</ujar.version>
 
-        <spring-boot.version>3.0.5</spring-boot.version>
+        <spring-boot.version>3.0.6</spring-boot.version>
         <spring-cloud-dependencies.version>2022.0.2</spring-cloud-dependencies.version>
         <opentelemetry.version>1.24.0</opentelemetry.version>
         <spring-test.version>6.0.4</spring-test.version>
@@ -66,7 +66,7 @@
         <jjwt.version>0.11.5</jjwt.version>
         <vaadin.version>24.0.0</vaadin.version>
 
-        <testcontainers.version>1.17.6</testcontainers.version>
+        <testcontainers.version>1.18.0</testcontainers.version>
         <playtika-testcontainers.version>2.3.2</playtika-testcontainers.version>
         <archunit.version>1.0.1</archunit.version>
         <awaitility.version>4.2.0</awaitility.version>
@@ -81,7 +81,7 @@
         <maven-javadoc-plugin.version>3.5.0</maven-javadoc-plugin.version>
         <maven-deploy-plugin.version>3.1.1</maven-deploy-plugin.version>
         <lombok-maven-plugin.version>1.18.20.0</lombok-maven-plugin.version>
-        <puppycrawl.checkstyle.version>10.7.0</puppycrawl.checkstyle.version>
+        <puppycrawl.checkstyle.version>10.9.3</puppycrawl.checkstyle.version>
         <git-commit-id-plugin.version>5.0.0</git-commit-id-plugin.version>
         <maven-surefire-plugin.version>3.0.0</maven-surefire-plugin.version>
         <jacoco-maven-plugin.version>0.8.9</jacoco-maven-plugin.version>
@@ -90,7 +90,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.0.5</version>
+        <version>3.0.6</version>
         <relativePath/>
     </parent>
 
