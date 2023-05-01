@@ -71,7 +71,7 @@
         <archunit.version>1.0.1</archunit.version>
         <awaitility.version>4.2.0</awaitility.version>
 
-        <springdoc-webmvc.version>2.0.4</springdoc-webmvc.version>
+        <springdoc-webmvc.version>2.1.0</springdoc-webmvc.version>
         <logstash-logback-encoder.version>7.3</logstash-logback-encoder.version>
 
         <gaul.modernizer-maven-plugin.version>2.6.0</gaul.modernizer-maven-plugin.version>
