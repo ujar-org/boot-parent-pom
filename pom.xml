@@ -74,7 +74,7 @@
         <logback-classic.version>1.4.7</logback-classic.version>
         <loki-logback-appender.version>1.4.0</loki-logback-appender.version>
 
-        <testcontainers.version>1.18.0</testcontainers.version>
+        <testcontainers.version>1.18.1</testcontainers.version>
         <playtika-testcontainers.version>2.3.2</playtika-testcontainers.version>
         <archunit.version>1.0.1</archunit.version>
         <awaitility.version>4.2.0</awaitility.version>
