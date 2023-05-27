@@ -47,7 +47,7 @@
         <spring-test.version>6.0.9</spring-test.version>
 
 
-        <jakarta.servlet-api.version>6.0.0</jakarta.servlet-api.version>
+        <jakarta.servlet-api.version>5.0.0</jakarta.servlet-api.version>
         <jakarta.validation-api.version>3.0.2</jakarta.validation-api.version>
         <hibernate-validator.version>8.0.0.Final</hibernate-validator.version>
 
