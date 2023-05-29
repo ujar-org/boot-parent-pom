@@ -73,7 +73,7 @@
         <zipkin-reporter.version>2.16.4</zipkin-reporter.version>
         <logstash-logback-encoder.version>7.3</logstash-logback-encoder.version>
         <logback.version>1.4.7</logback.version>
-        <loki-logback-appender.version>1.4.0</loki-logback-appender.version>
+        <loki-logback-appender.version>1.4.1</loki-logback-appender.version>
 
         <testcontainers.version>1.18.1</testcontainers.version>
         <playtika-testcontainers.version>2.3.2</playtika-testcontainers.version>
