@@ -63,7 +63,7 @@
         <liquibase.version>4.23.2</liquibase.version>
         <flyway.version>9.22.2</flyway.version>
 
-        <jjwt.version>0.11.5</jjwt.version>
+        <jjwt.version>0.12.3</jjwt.version>
         <vaadin.version>24.1.9</vaadin.version>
 
         <micrometer.version>1.11.4</micrometer.version>
