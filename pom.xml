@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.ujar.boot</groupId>
+    <groupId>dev.knowhowto.boot</groupId>
     <artifactId>boot-parent-pom</artifactId>
     <version>23.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -18,12 +18,12 @@
         </license>
     </licenses>
     <organization>
-        <name>uJar Bootcamp</name>
-        <url>https://www.ujar.org</url>
+        <name>KnowHowSpringBoot Bootcamp</name>
+        <url>https://knowhowto.dev</url>
     </organization>
     <developers>
         <developer>
-            <id>1</id>
+            <id>dimdnk</id>
             <name>Dima Denysenko</name>
             <email>coding@dimdnk.com</email>
             <roles>
@@ -39,7 +39,7 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
 
-        <ujar.version>23.0.0-SNAPSHOT</ujar.version>
+        <knowhowto.version>23.0.0-SNAPSHOT</knowhowto.version>
 
         <spring-boot.version>3.1.5</spring-boot.version>
         <spring-kafka.version>3.0.12</spring-kafka.version>
@@ -110,49 +110,49 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>org.ujar.boot</groupId>
+                <groupId>dev.knowhowto.boot</groupId>
                 <artifactId>boot-build</artifactId>
-                <version>${ujar.version}</version>
+                <version>${knowhowto.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.ujar.boot</groupId>
+                <groupId>dev.knowhowto.boot</groupId>
                 <artifactId>boot-cache</artifactId>
-                <version>${ujar.version}</version>
+                <version>${knowhowto.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.ujar.boot</groupId>
+                <groupId>dev.knowhowto.boot</groupId>
                 <artifactId>boot-kafka</artifactId>
-                <version>${ujar.version}</version>
+                <version>${knowhowto.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.ujar.boot</groupId>
+                <groupId>dev.knowhowto.boot</groupId>
                 <artifactId>boot-restful</artifactId>
-                <version>${ujar.version}</version>
+                <version>${knowhowto.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.ujar.boot</groupId>
+                <groupId>dev.knowhowto.boot</groupId>
                 <artifactId>boot-starter-cache</artifactId>
-                <version>${ujar.version}</version>
+                <version>${knowhowto.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.ujar.boot</groupId>
+                <groupId>dev.knowhowto.boot</groupId>
                 <artifactId>boot-starter-observability</artifactId>
-                <version>${ujar.version}</version>
+                <version>${knowhowto.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.ujar.boot</groupId>
+                <groupId>dev.knowhowto.boot</groupId>
                 <artifactId>boot-starter-amqp</artifactId>
-                <version>${ujar.version}</version>
+                <version>${knowhowto.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.ujar.boot</groupId>
+                <groupId>dev.knowhowto.boot</groupId>
                 <artifactId>boot-starter-kafka</artifactId>
-                <version>${ujar.version}</version>
+                <version>${knowhowto.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.ujar.boot</groupId>
+                <groupId>dev.knowhowto.boot</groupId>
                 <artifactId>boot-starter-restful</artifactId>
-                <version>${ujar.version}</version>
+                <version>${knowhowto.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
@@ -586,14 +586,14 @@
                             <version>${puppycrawl.checkstyle.version}</version>
                         </dependency>
                         <dependency>
-                            <groupId>org.ujar.build</groupId>
-                            <artifactId>checkstyle-utils</artifactId>
-                            <version>${ujar.version}</version>
+                            <groupId>org.iqkv.checkstyle</groupId>
+                            <artifactId>iqkv-checkstyle-config</artifactId>
+                            <version>${knowhowto.version}</version>
                         </dependency>
                     </dependencies>
                     <configuration>
                         <sourceDirectories>${basedir}/src</sourceDirectories>
-                        <configLocation>svc-common-checkstyle.xml</configLocation>
+                        <configLocation>iqkv-common-checkstyle.xml</configLocation>
                         <includeTestSourceDirectory>true</includeTestSourceDirectory>
                     </configuration>
                     <executions>
