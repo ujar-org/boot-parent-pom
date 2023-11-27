@@ -41,7 +41,7 @@
 
         <knowhowto.version>23.0.0-SNAPSHOT</knowhowto.version>
 
-        <spring-boot.version>3.1.5</spring-boot.version>
+        <spring-boot.version>3.2.0</spring-boot.version>
         <spring-kafka.version>3.0.12</spring-kafka.version>
         <spring-cloud-dependencies.version>2022.0.4</spring-cloud-dependencies.version>
         <spring-test.version>6.1.0</spring-test.version>
