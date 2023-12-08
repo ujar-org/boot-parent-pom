@@ -65,6 +65,7 @@
         <liquibase.version>4.25.0</liquibase.version>
         <flyway.version>10.1.0</flyway.version>
 
+        <kafka-streams.version>3.6.1</kafka-streams.version>
         <jjwt.version>0.12.3</jjwt.version>
         <vaadin.version>24.2.5</vaadin.version>
 
@@ -329,6 +330,11 @@
                 <groupId>org.springframework.kafka</groupId>
                 <artifactId>spring-kafka</artifactId>
                 <version>${spring-kafka.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.kafka</groupId>
+                <artifactId>kafka-streams</artifactId>
+                <version>${kafka-streams.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.mapstruct</groupId>
