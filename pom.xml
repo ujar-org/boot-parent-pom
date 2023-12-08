@@ -44,6 +44,7 @@
 
         <spring-boot.version>3.1.5</spring-boot.version>
         <spring-kafka.version>3.1.0</spring-kafka.version>
+        <spring-kafka-test.version>3.0.13</spring-kafka-test.version>
 
         <spring-cloud-dependencies.version>2022.0.4</spring-cloud-dependencies.version>
         <spring-test.version>6.1.1</spring-test.version>
@@ -436,7 +437,7 @@
             <dependency>
                 <groupId>org.springframework.kafka</groupId>
                 <artifactId>spring-kafka-test</artifactId>
-                <version>${spring-kafka.version}</version>
+                <version>${spring-kafka-test.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.testcontainers</groupId>
